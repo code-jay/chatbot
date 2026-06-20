@@ -267,6 +267,36 @@ http://127.0.0.1:8000/docs
 
 ---
 
+#  Creating a Test User
+
+## Before using the application, create a user account.
+
+## Register via API
+
+Open Swagger UI:
+
+```text
+http://127.0.0.1:8000/docs
+```
+Use:
+
+```bash
+POST /auth/register
+```
+
+Request Body:
+
+```bash
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123",
+  "role": "user"
+}
+```
+
+---
+
 # Frontend Setup
 
 ## Install Dependencies
