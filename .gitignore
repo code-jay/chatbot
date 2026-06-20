@@ -1,6 +1,6 @@
 # Backend
 backend/venv/
-backend/venvchat/
+backend/testenv/
 backend/__pycache__/
 backend/.env
 backend/*.db
@@ -20,7 +20,16 @@ backend/app/.DS_Store
 backend/app/__pycache__
 backend/app/api/v1/__pycache__
 backend/app/services/rag/__pycache__
-backend/app/services/rag/__pycache__
+backend/app/services/file/__pycache__
+backend/app/services/chat/__pycache__
+backend/app/services/auth/__pycache_
+backend/app/services/ai_gateway/__pycache__
+backend/app/services/admin/__pycache__
+backend/app/services/__pycache__
+backend/app/schemas/__pycache_
+backend/app/models/__pycache__
+backend/app/db/__pycache_
+backend/app/core/__pycache__
 backend/tests/__pycache__
 
 .DS_Store
