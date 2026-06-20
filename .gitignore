@@ -17,6 +17,11 @@ backend/.vscode/
 backend/.idea/
 backend/.DS_Store
 backend/app/.DS_Store
+backend/app/__pycache__
+backend/app/api/v1/__pycache__
+backend/app/services/rag/__pycache__
+backend/app/services/rag/__pycache__
+backend/tests/__pycache__
 
 .DS_Store
 
