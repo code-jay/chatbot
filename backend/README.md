@@ -196,6 +196,29 @@ Swagger Documentation:
 http://127.0.0.1:8000/docs
 ```
 
+Creating a Test User
+
+Before using the application, create a user account.
+
+Option 1: Register via API
+
+Open Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+Use:
+
+POST /auth/register
+
+Request Body:
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123",
+  "role": "user"
+}
+
 ---
 
 # API Endpoints
