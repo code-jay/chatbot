@@ -479,7 +479,4 @@ MIT License
 
 Jay Ram Singh
 
-Founder, Altmatic Technologies LLP
-
-Website: https://altmatic.com
 LinkedIn: https://www.linkedin.com/in/jayram
