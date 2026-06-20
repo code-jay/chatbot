@@ -16,6 +16,7 @@ backend/*.so
 backend/.vscode/
 backend/.idea/
 backend/.DS_Store
+backend/app/.DS_Store
 
 .DS_Store
 
