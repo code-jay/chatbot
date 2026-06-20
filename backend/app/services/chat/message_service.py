@@ -1,0 +1,45 @@
+from sqlalchemy.orm import Session
+
+from app.models import Message
+
+
+def save_message(
+    db: Session,
+    conversation_id: str,
+    role: str,
+    content: str
+):
+    message = Message(
+        conversation_id=conversation_id,
+        role=role,
+        content=content
+    )
+
+    db.add(message)
+    db.commit()
+    db.refresh(message)
+
+    return message
+
+
+def get_previous_messages(
+    db: Session,
+    conversation_id: str
+):
+    return (
+        db.query(Message)
+        .filter(Message.conversation_id == conversation_id)
+        .order_by(Message.created_at)
+        .all()
+    )
+
+def get_conversation_messages(
+    db: Session,
+    conversation_id: int
+):
+    return (
+        db.query(Message)
+        .filter(Message.conversation_id == conversation_id)
+        .order_by(Message.created_at)
+        .all()
+    )
