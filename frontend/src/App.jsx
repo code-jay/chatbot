@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { API_BASE_URL } from "./config";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -29,7 +30,7 @@ async function loadCurrentUser() {
 
   if (!token) return;
 
-  const res = await fetch("http://127.0.0.1:8000/auth/me", {
+  const res = await fetch(`${API_BASE_URL}/auth/me`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -45,7 +46,7 @@ async function loadCurrentUser() {
 }
 
 async function login() {
-  const res = await fetch("http://127.0.0.1:8000/auth/login", {
+  const res = await fetch(`${API_BASE_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -85,7 +86,7 @@ async function loadConversations() {
     return;
   }
 
-  const res = await fetch("http://127.0.0.1:8000/conversations", {
+  const res = await fetch(`${API_BASE_URL}/conversations`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -106,7 +107,7 @@ async function loadConversations() {
   setConversationId(id);
 
   const res = await fetch(
-    `http://127.0.0.1:8000/conversations/${id}/messages`,
+    `${API_BASE_URL}/conversations/${id}/messages`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -137,7 +138,7 @@ async function deleteConversation(id, e) {
 
   const token = localStorage.getItem("token");
 
-  const res = await fetch(`http://127.0.0.1:8000/conversations/${id}`, {
+  const res = await fetch(`${API_BASE_URL}/conversations/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -162,7 +163,7 @@ async function uploadFile(file, convId) {
   const formData = new FormData();
   formData.append("file", file);
 
-  let url = "http://127.0.0.1:8000/files/upload";
+  let url = `${API_BASE_URL}/files/upload`;
 
   if (convId) {
     url += `?conversation_id=${convId}`;
@@ -225,7 +226,7 @@ async function sendMessage() {
 
   setInput("");
 
-  const response = await fetch("http://127.0.0.1:8000/chat/stream", {
+  const response = await fetch(`${API_BASE_URL}/chat/stream`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
